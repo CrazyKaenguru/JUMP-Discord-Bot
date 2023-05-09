@@ -65,9 +65,10 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 
+const welcomechannelId=process.env.welcome_channel_id 
 
 client.on('guildMemberAdd', (member) => {
-    const welcomeChannel = member.guild.channels.cache.find((channel) => channel.name === 'welcome');
+    const welcomeChannel = member.guild.channels.cache.find((channel) => channel.id === welcomechannelId);
     if (!welcomeChannel) return;
   
     const channlid=process.env.fotos_channel_id
